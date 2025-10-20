@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alok Enterprises",
   description: "Uttar Pradesh's trusted solar partner",
+  icons: {
+    icon: "/public/logo.png",
+  },
 };
 
 export default function RootLayout({

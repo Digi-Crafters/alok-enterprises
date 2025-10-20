@@ -2,44 +2,42 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 /*
-  ENHANCED WHY SOLAR Section - Beautiful UI/UX with interactive elements
-  Color theme: Sustainable Green, Orange, Water Blue.
+  PROFESSIONAL WHY SOLAR Section - Enterprise-grade UI/UX
+  Color theme: Sustainable Green (#0B8457), Orange (#FF6A00), Water Blue (#00AEEF).
   Font pairing: Hind (for Hinglish headings), Poppins (for content).
 */
 
 const features = [
   {
-    icon: "💰",
+    image: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=800&q=80",
     title: "Up to 40% Subsidy",
     desc: "Government yojana ke under ghar pe solar lagane par milegi heavy subsidy.",
     gradient: "from-green-500 to-emerald-600",
-    bgGradient: "from-green-50 to-emerald-50",
     delay: 0.1
   },
   {
-    icon: "⚡",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80",
     title: "Save on Bijli Bills",
     desc: "Har mahine ke electricity bill mein noticeable savings — 100% green energy!",
     gradient: "from-orange-500 to-amber-600",
-    bgGradient: "from-orange-50 to-amber-50",
     delay: 0.2
   },
   {
-    icon: "🌍",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
     title: "Eco-Friendly Future",
     desc: "Apne ghar ke saath environment ka bhi khayal rakhiye — sustainable power use karein.",
     gradient: "from-blue-500 to-cyan-600",
-    bgGradient: "from-blue-50 to-cyan-50",
     delay: 0.3
   },
   {
-    icon: "🔧",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     title: "Low Maintenance",
     desc: "Solar panels ke liye minimum upkeep chahiye — 25+ saal tak reliable output.",
     gradient: "from-purple-500 to-indigo-600",
-    bgGradient: "from-purple-50 to-indigo-50",
     delay: 0.4
   },
 ];
@@ -65,6 +63,7 @@ export default function WhySolar() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-green-100 rounded-full px-4 py-2 mb-6 border border-orange-200">
@@ -81,6 +80,7 @@ export default function WhySolar() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
+            viewport={{ once: true }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-[Poppins,system-ui]"
           >
             Solar sirf bijli bachane ka option nahi, balki ek intelligent investment hai aapke 
@@ -93,6 +93,7 @@ export default function WhySolar() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
           {stats.map((stat, index) => (
@@ -101,6 +102,7 @@ export default function WhySolar() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
+              viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-slate-100"
             >
@@ -117,7 +119,7 @@ export default function WhySolar() {
           ))}
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid with Professional Image Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {features.map((item, i) => (
             <motion.div
@@ -129,30 +131,45 @@ export default function WhySolar() {
                 transition: { duration: 0.3 }
               }}
               transition={{ duration: 0.6, delay: item.delay }}
-              className="group relative"
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-2xl"
             >
-              {/* Background Glow Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-              
-              <div className={`relative bg-gradient-to-br ${item.bgGradient} to-white rounded-2xl p-6 h-full border border-slate-200/60 shadow-md hover:shadow-2xl transition-all duration-300 group-hover:border-transparent`}>
-                {/* Icon Container */}
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-white text-2xl mb-4 mx-auto shadow-lg`}
-                >
-                  {item.icon}
-                </motion.div>
+              <div className="relative bg-white h-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200/60">
+                {/* Image Container with Next.js Image */}
+                <div className="relative h-52 overflow-hidden">
+                  <Image 
+                    src={item.image} 
+                    alt={item.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-50 mix-blend-multiply`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  {/* Icon Badge on Image */}
+                  <div className="absolute top-4 right-4">
+                    <div className={`w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg border border-white/30`}>
+                      <span className="text-2xl">
+                        {i === 0 ? '💰' : i === 1 ? '⚡' : i === 2 ? '🌍' : '🔧'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-bold text-slate-800 mb-3 text-center font-[Hind,system-ui]">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed text-center font-[Poppins,system-ui]">
-                  {item.desc}
-                </p>
+                {/* Content Section */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-800 mb-3 font-[Hind,system-ui]">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed font-[Poppins,system-ui] text-sm">
+                    {item.desc}
+                  </p>
+                </div>
 
-                {/* Hover Indicator */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-8 h-0.5 bg-gradient-to-r from-[#FF6A00] to-[#0B8457] rounded-full transition-all duration-300"></div>
+                {/* Bottom Accent Line */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
               </div>
             </motion.div>
           ))}
@@ -163,6 +180,7 @@ export default function WhySolar() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
           className="bg-gradient-to-r from-[#0B8457] to-[#1AAE7F] rounded-3xl p-8 lg:p-12 text-center text-white shadow-2xl"
         >
           <div className="max-w-4xl mx-auto">
@@ -179,14 +197,14 @@ export default function WhySolar() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-[#0B8457] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
-                Calculate Your Savings
+                <a href="#services">Calculate Your Savings</a>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white/10 transition-all"
               >
-                Free Site Inspection
+                <a href="#contact">Free Site Inspection</a>
               </motion.button>
             </div>
 

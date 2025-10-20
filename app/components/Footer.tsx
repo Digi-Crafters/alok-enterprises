@@ -24,14 +24,14 @@ export default function Footer() {
     {
       icon: "📞",
       label: "Call Us",
-      value: "9236830000",
-      href: "tel:9236830000"
+      value: "6394067351",
+      href: "tel:6394067351"
     },
     {
       icon: "💬",
       label: "WhatsApp",
-      value: "9236830000", 
-      href: "https://wa.me/9236830000"
+      value: "6394067351", 
+      href: "https://wa.me/6394067351"
     },
     {
       icon: "📍",
@@ -164,7 +164,7 @@ export default function Footer() {
               </div>
             </div>
             <motion.a
-              href="https://wa.me/9236830000?text=Namaste!%20I%20want%20information%20about%20PM%20Surya%20Ghar%20subsidy."
+              href="https://wa.me/6394067351?text=Namaste!%20I%20want%20information%20about%20PM%20Surya%20Ghar%20subsidy."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -184,14 +184,10 @@ export default function Footer() {
           className="mt-12 pt-8 border-t border-slate-200"
         >
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            <div className="text-slate-500 text-sm">
-              © {currentYear} ALOK Enterprises. All rights reserved.
-            </div>
-            
-            <div className="flex flex-wrap gap-6 text-sm text-slate-500">
-              <a href="#" className="hover:text-[#FF6A00] transition-colors">Privacy</a>
-              <a href="#" className="hover:text-[#FF6A00] transition-colors">Terms</a>
-              <a href="#" className="hover:text-[#FF6A00] transition-colors">Disclaimer</a>
+            <div className="w-full flex justify-center">
+              <div className="text-slate-500 text-sm text-center">
+                © {currentYear} ALOK Enterprises. All rights reserved.
+              </div>
             </div>
           </div>
 
@@ -215,7 +211,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/9236830000"
+        href="https://wa.me/6394067351"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}

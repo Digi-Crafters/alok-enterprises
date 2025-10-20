@@ -35,7 +35,7 @@ Please contact me for free consultation.`;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const whatsappNumber = "9236830000"; // Replace with actual number
+    const whatsappNumber = "6394067351"; // Replace with actual number
     const message = encodeURIComponent(generateWhatsAppMessage());
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     
@@ -66,7 +66,7 @@ Please contact me for free consultation.`;
   ];
 
   const sendQuickMessage = (quickMessage: string) => {
-    const whatsappNumber = "9236830000";
+    const whatsappNumber = "6394067351";
     const message = encodeURIComponent(`Namaste! ${quickMessage}`);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     
@@ -147,7 +147,7 @@ Please contact me for free consultation.`;
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
-                    placeholder="9236830000"
+                    placeholder="6394067351"
                   />
                 </div>
               </div>
@@ -253,7 +253,7 @@ Please contact me for free consultation.`;
               <div className="space-y-4">
                 {/* WhatsApp */}
                 <motion.a
-                  href="https://wa.me/9236830000"
+                  href="https://wa.me/6394067351"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -266,12 +266,12 @@ Please contact me for free consultation.`;
                     <div className="font-semibold text-slate-800">WhatsApp</div>
                     <div className="text-sm text-slate-600">Instant Reply - 24x7</div>
                   </div>
-                  <div className="text-green-600 font-bold">9236830000</div>
+                  <div className="text-green-600 font-bold">6394067351</div>
                 </motion.a>
 
                 {/* Phone Call */}
                 <motion.a
-                  href="tel:9236830000"
+                  href="tel:6394067351"
                   whileHover={{ scale: 1.02 }}
                   className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-all border border-blue-200"
                 >
@@ -351,7 +351,7 @@ Please contact me for free consultation.`;
               Don&apos;t wait! Send a message now and get free site inspection within 24 hours.
             </p>
             <motion.a
-              href="https://wa.me/9236830000?text=Namaste!%20I%20want%20free%20solar%20site%20inspection%20from%20ALOK%20Enterprises."
+              href="https://wa.me/6394067351?text=Namaste!%20I%20want%20free%20solar%20site%20inspection%20from%20ALOK%20Enterprises."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
